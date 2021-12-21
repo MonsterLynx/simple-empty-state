@@ -1,16 +1,16 @@
 <template>
   <div>
-    <div class="empty_state-container">
+    <div :class="`${baseCssClass}-container`">
       <div class="empty_state-image_placeholder">
         <slot name="image-placeholder" />
       </div>
-      <div class="empty_state-title">
+      <div :class="`${baseCssClass}-title`">
         <slot name="title"> </slot>
       </div>
-      <div class="empty_state-hint">
+      <div :class="`${baseCssClass}-hint`">
         <slot name="hint"> </slot>
       </div>
-      <div class="empty_state-actions">
+      <div :class="`${baseCssClass}-actions`">
         <slot name="action"> </slot>
       </div>
     </div>
@@ -22,11 +22,15 @@ import Vue from "vue";
 
 export default Vue.extend({
   name: "EmptyState",
+  computed: {
+    baseCssClass: () => "empty_state",
+  },
 });
 </script>
 
 <style scoped>
 .empty_state-container {
+  font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   display: flex;
   justify-content: center;
   flex-direction: column;
