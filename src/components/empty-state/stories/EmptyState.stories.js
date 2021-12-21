@@ -1,26 +1,12 @@
-import EmptyState from '../EmptyState.vue';
-import Button from '../../button/Button.vue';
+import EmptyState from "../EmptyState.vue";
+import Button from "../../button/Button.vue";
 
 export default {
-  title: 'Example/EmtpyState',
-  component: EmptyState
+  title: "Example/EmtpyState",
+  component: EmptyState,
 };
 
-import image from '../../../assets/logo.png';
-
-// More on component templates: https://storybook.js.org/docs/vue/writing-stories/introduction#using-args
-const Template = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  components: { EmptyState, Button },
-  template: '<empty-state v-bind="$props" />',
-});
-
-const WithPlaceholder = (args, { argTypes }) => ({
-  props: {
-    src: {
-      default: () => image,
-    },
-  },
+const WithPlaceholderAndTitle = (args, { argTypes }) => ({
   components: { EmptyState, Button },
   template: `
     <empty-state >
@@ -30,24 +16,55 @@ const WithPlaceholder = (args, { argTypes }) => ({
       <template v-slot:title>
         <h1>Well Done!</h1>
       </template>
-      <template v-slot:hint>
-        <h2>You're all caught up</h2>
+    </empty-state>`,
+});
+
+const WithPlaceholderAndHint = (args, { argTypes }) => ({
+  components: { EmptyState, Button },
+  template: `
+    <empty-state >
+      <template v-slot:image-placeholder>
+        <img src="logo.png" /> 
       </template>
-      <template v-slot:action>
-        <Button label="Show Me!"></Button>
+      <template v-slot:hint>
+        <h2>Looks like you need to adjust some things</h2>
       </template>
     </empty-state>`,
 });
 
-export const WithPlaceholderStory = WithPlaceholder.bind({});
-WithPlaceholderStory.args = {
-  src: {
-    default: image
-  },
-}
+const WithPlaceholderAndButton = (args, { argTypes }) => ({
+  components: { EmptyState, Button },
+  template: `
+    <empty-state >
+      <template v-slot:image-placeholder>
+        <img src="logo.png" /> 
+      </template>
+      <template v-slot:action>
+        <Button label="Show Different Results!"></Button>
+      </template>
+    </empty-state>`,
+});
 
-export const Primary = Template.bind({});
-// More on args: https://storybook.js.org/docs/vue/writing-stories/args
-// Primary.args = {
-//   label: 'EmptyState',
-// };
+const WithEverything = (args, { argTypes }) => ({
+  components: { EmptyState, Button },
+  template: `
+  <empty-state >
+    <template v-slot:image-placeholder>
+      <img src="logo.png" /> 
+    </template>
+    <template v-slot:title>
+      <h1>Well Done!</h1>
+    </template>
+    <template v-slot:hint>
+      <h2>You're all caught up</h2>
+    </template>
+    <template v-slot:action>
+      <Button label="Show Me!"></Button>
+    </template>
+  </empty-state>`,
+});
+
+export const WithPlaceholderAndTitleStory = WithPlaceholderAndTitle.bind({});
+export const WithPlaceholderAndHintStory = WithPlaceholderAndHint.bind({});
+export const WithPlaceholderAndButtonStory = WithPlaceholderAndButton.bind({});
+export const WithEverythingStory = WithEverything.bind({});

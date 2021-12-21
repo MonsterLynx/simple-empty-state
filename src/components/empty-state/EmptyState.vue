@@ -22,12 +22,6 @@ import Vue from "vue";
 
 export default Vue.extend({
   name: "EmptyState",
-  props: {
-    msg: String,
-  },
-  computed: {
-    text: () => "Show All Orders",
-  },
 });
 </script>
 
@@ -36,7 +30,7 @@ export default Vue.extend({
   display: flex;
   justify-content: center;
   flex-direction: column;
-  padding: 0 25%;
+  padding: 20% 25%;
 }
 
 .empty_state-image_placeholder {
