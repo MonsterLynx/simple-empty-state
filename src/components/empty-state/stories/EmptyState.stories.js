@@ -81,8 +81,24 @@ const WithMultipleActions = () => ({
   </empty-state>`,
 });
 
+const WithMultipleImages = () => ({
+  components: { EmptyState, Button },
+  template: `
+    <empty-state >
+      <template v-slot:image-placeholder>
+        <img src="logo.png" /> 
+        <img src="logo.png" /> 
+        <img src="logo.png" /> 
+      </template>
+      <template v-slot:title>
+        <h1>Well Done!</h1>
+      </template>
+    </empty-state>`,
+});
+
 export const WithPlaceholderAndTitleStory = WithPlaceholderAndTitle.bind({});
 export const WithPlaceholderAndHintStory = WithPlaceholderAndHint.bind({});
 export const WithPlaceholderAndButtonStory = WithPlaceholderAndButton.bind({});
 export const WithEverythingStory = WithEverything.bind({});
 export const WithMultipleActionsStory = WithMultipleActions.bind({});
+export const WithMultipleImagesStory = WithMultipleImages.bind({});

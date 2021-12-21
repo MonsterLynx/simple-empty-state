@@ -30,13 +30,13 @@ export default Vue.extend({
   display: flex;
   justify-content: center;
   flex-direction: column;
-  padding: 20% 25%;
 }
 
 .empty_state-image_placeholder {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 8px;
 }
 
 .empty_state-title,
@@ -48,5 +48,11 @@ export default Vue.extend({
   display: flex;
   justify-content: center;
   gap: 8px;
+}
+
+@media screen and (max-device-width: 375px) {
+  .empty_state-image_placeholder {
+    flex-direction: column;
+  }
 }
 </style>
