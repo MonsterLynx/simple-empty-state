@@ -6,7 +6,7 @@ export default {
   component: EmptyState,
 };
 
-const WithPlaceholderAndTitle = (args, { argTypes }) => ({
+const WithPlaceholderAndTitle = () => ({
   components: { EmptyState, Button },
   template: `
     <empty-state >
@@ -19,7 +19,7 @@ const WithPlaceholderAndTitle = (args, { argTypes }) => ({
     </empty-state>`,
 });
 
-const WithPlaceholderAndHint = (args, { argTypes }) => ({
+const WithPlaceholderAndHint = () => ({
   components: { EmptyState, Button },
   template: `
     <empty-state >
@@ -32,7 +32,7 @@ const WithPlaceholderAndHint = (args, { argTypes }) => ({
     </empty-state>`,
 });
 
-const WithPlaceholderAndButton = (args, { argTypes }) => ({
+const WithPlaceholderAndButton = () => ({
   components: { EmptyState, Button },
   template: `
     <empty-state >
@@ -45,7 +45,7 @@ const WithPlaceholderAndButton = (args, { argTypes }) => ({
     </empty-state>`,
 });
 
-const WithEverything = (args, { argTypes }) => ({
+const WithEverything = () => ({
   components: { EmptyState, Button },
   template: `
   <empty-state >
@@ -64,7 +64,25 @@ const WithEverything = (args, { argTypes }) => ({
   </empty-state>`,
 });
 
+const WithMultipleActions = () => ({
+  components: { EmptyState, Button },
+  template: `
+  <empty-state >
+    <template v-slot:image-placeholder>
+      <img src="logo.png" /> 
+    </template>
+    <template v-slot:hint>
+      <h2>You're all caught up</h2>
+    </template>
+    <template v-slot:action>
+      <Button label="Show Me!"></Button>
+      <Button label="Or Not!"></Button>
+    </template>
+  </empty-state>`,
+});
+
 export const WithPlaceholderAndTitleStory = WithPlaceholderAndTitle.bind({});
 export const WithPlaceholderAndHintStory = WithPlaceholderAndHint.bind({});
 export const WithPlaceholderAndButtonStory = WithPlaceholderAndButton.bind({});
 export const WithEverythingStory = WithEverything.bind({});
+export const WithMultipleActionsStory = WithMultipleActions.bind({});

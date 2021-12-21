@@ -47,5 +47,6 @@ export default Vue.extend({
 .empty_state-actions {
   display: flex;
   justify-content: center;
+  gap: 8px;
 }
 </style>
