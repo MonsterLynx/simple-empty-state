@@ -30,7 +30,6 @@ export default Vue.extend({
 
 <style scoped>
 .empty_state-container {
-  font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   display: flex;
   justify-content: center;
   flex-direction: column;

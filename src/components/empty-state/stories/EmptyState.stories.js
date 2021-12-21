@@ -71,6 +71,9 @@ const WithMultipleActions = () => ({
     <template v-slot:image-placeholder>
       <img src="logo.png" /> 
     </template>
+    <template v-slot:title>
+      <h1>Well Done!</h1>
+    </template>
     <template v-slot:hint>
       <h2>You're all caught up</h2>
     </template>
