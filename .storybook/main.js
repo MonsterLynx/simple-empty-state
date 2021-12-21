@@ -7,5 +7,6 @@ module.exports = {
     "@storybook/addon-links",
     "@storybook/addon-essentials"
   ],
-  "framework": "@storybook/vue"
+  "framework": "@storybook/vue",
+  "staticDirs": ['../public']
 }
